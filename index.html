@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IT Support Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: url('https://images.unsplash.com/photo-1581092334808-8d24f2a194a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&q=80') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      text-align: center;
+      padding: 50px;
+    }
+    .overlay {
+      background-color: rgba(0,0,0,0.6);
+      padding: 40px;
+      border-radius: 15px;
+      max-width: 900px;
+      margin: auto;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    }
+    h1 {
+      margin-bottom: 30px;
+      font-size: 2.5rem;
+      color: #ffcc00;
+    }
+    .button {
+      display: block;
+      width: 250px;
+      margin: 15px auto;
+      padding: 15px;
+      background: linear-gradient(45deg, #007bff, #00c6ff);
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: bold;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      transition: 0.3s;
+      cursor: pointer;
+    }
+    .button:hover {
+      background: linear-gradient(45deg, #0056b3, #0099cc);
+      transform: scale(1.05);
+    }
+    .hidden-section {
+      display: none;
+      margin-top: 20px;
+    }
+    iframe {
+      border: none;
+      width: 100%;
+      height: 400px;
+      margin-top: 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    }
+    .sub-section {
+      margin-top: 30px;
+    }
+    h2 {
+      color: #ffcc00;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <h1>IT Support Dashboard</h1>
+
+    <!-- Forms -->
+    <a href="https://forms.gle/8497BUueXo7z5hibA" class="button" target="_blank">Submit Ticket</a>
+    <a href="https://forms.gle/xWmPt6Z9JJ8kE2xs7" class="button" target="_blank">Give Feedback</a>
+
+    <!-- Summary -->
+    <button class="button" onclick="toggleSection('summarySection')">Summary Report</button>
+    <div id="summarySection" class="hidden-section">
+      <div class="sub-section">
+        <h2>Ticket Summary</h2>
+        <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQZmIPLLXQby-tgu_i05Gy6RhWfBkHK3aV6FGIJs5QsH7XGdKdlG-uRcS10cjGNu2nSz97sN9lP52n0/pubhtml?gid=179444674&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+      </div>
+      <div class="sub-section">
+        <h2>Feedback Summary</h2>
+        <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSMsCvJHp58xPs9DsraLaYGbxaZsXO6ZLUbcAT5Ei_SyJFCHVwtr6eLY6BRMLY7rgP614BqnXm8BGcN/pubhtml?gid=553848314&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+      </div>
+    </div>
+
+    <!-- Charts -->
+    <button class="button" onclick="toggleSection('chartSection')">Charts</button>
+    <div id="chartSection" class="hidden-section">
+      <div class="sub-section">
+        <h2>Ticket Charts</h2>
+        <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQZmIPLLXQby-tgu_i05Gy6RhWfBkHK3aV6FGIJs5QsH7XGdKdlG-uRcS10cjGNu2nSz97sN9lP52n0/pubchart?oid=1194526865&amp;format=interactive"></iframe>
+      </div>
+      <div class="sub-section">
+        <h2>Feedback Charts</h2>
+        <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSMsCvJHp58xPs9DsraLaYGbxaZsXO6ZLUbcAT5Ei_SyJFCHVwtr6eLY6BRMLY7rgP614BqnXm8BGcN/pubchart?oid=1230801840&amp;format=interactive"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleSection(id) {
+      const section = document.getElementById(id);
+      section.style.display = section.style.display === "block" ? "none" : "block";
+    }
+  </script>
+</body>
+</html>
